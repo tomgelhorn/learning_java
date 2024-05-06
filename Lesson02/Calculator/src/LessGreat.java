@@ -1,5 +1,3 @@
-package lesson_02;
-
 public class LessGreat {
     public static void main(String[] args) {
         calc myCalc = new calc();
