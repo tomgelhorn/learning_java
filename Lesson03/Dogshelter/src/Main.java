@@ -16,7 +16,7 @@ public class Main {
         };
         Shelter shelter = new Shelter(names.length);
         for (int i = 0; i < names.length; i++) {
-            Dog dog = new Dog(names[i], (int)(random()*100));
+            Dog dog = new Dog(names[i], (int)(random()*100+30));
             shelter.addDog(dog);
         }
 
@@ -39,11 +39,15 @@ public class Main {
 
         // Substring test
 
-
         doggo = shelter.getDog("mm");
         Main.strTest(doggo);
         doggo = shelter.getDog("usi");
         Main.strTest(doggo);
+
+        // Shelter overload
+        Dog dog = new Dog("Sarah", (int)(random()*100+30));
+        shelter.addDog(dog);
+
         shelter.print();
     }
 }

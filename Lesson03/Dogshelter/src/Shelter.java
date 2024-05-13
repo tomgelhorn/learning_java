@@ -14,7 +14,16 @@ public class Shelter {
             dogs[count] = dog;
             count++;
         } else {
-            return;
+            Dog[] temp = dogs;
+            dogs = new Dog[capacity * 2];
+            capacity = capacity * 2;
+            System.out.println("Doubled shelter capacity: " + capacity);
+            for (int i = 0; i < temp.length; i++) {
+                dogs[i] = temp[i];
+            }
+            dogs[count] = dog;
+            count++;
+            System.out.println("Added Dog: " + dog.getName());
         }
     }
 
@@ -38,7 +47,13 @@ public class Shelter {
     public Dog getDog(String name) {
         for (int i = 0; i < count; i++) {
             if (dogs[i].getName().contains(name)) {
-                return dogs[i];
+                System.out.println("Adopting Dog: " + dogs[i].getName());
+                Dog adopted = dogs[i];
+                for (int j = i; j < count-1; j++) {
+                       dogs[j] = dogs[j + 1];
+                }
+                count--;
+                return adopted;
             }
         }
         return null;
