@@ -61,7 +61,13 @@ public class Shelter {
     public Dog getDog(int minSize) {
         for (int i = 0; i < count; i++) {
             if (dogs[i].getSize() >= minSize) {
-                return dogs[i];
+                System.out.println("Adopting Dog: " + dogs[i].getName());
+                Dog adopted = dogs[i];
+                for (int j = i; j < count-1; j++) {
+                    dogs[j] = dogs[j + 1];
+                }
+                count--;
+                return adopted;
             }
         }
     return null;

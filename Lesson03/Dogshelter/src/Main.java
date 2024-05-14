@@ -20,15 +20,18 @@ public class Main {
             shelter.addDog(dog);
         }
 
-        //Search Test
-
+        //Name Search Test
+        System.out.println("--- Testing: Search by Name ---");
+        System.out.println("Searching for: Timmy");
         Dog doggo = shelter.getDog("Timmy");
         Main.strTest(doggo);
+        System.out.println("Searching for: Tommy");
         doggo = shelter.getDog("Tommy");
         Main.strTest(doggo);
 
-        //Size Test
-
+        //Size Search Test
+        System.out.println("--- Testing: Search by Size ---");
+        System.out.println("Searching for dog with size greater than: 69");
         doggo = shelter.getDog(69);
         if (doggo != null) {
             System.out.println("I found " + doggo.getName() + ", with size: "+ doggo.getSize());
@@ -37,7 +40,7 @@ public class Main {
             System.out.println("No Dog found");
         }
 
-        // Substring test
+        // Substring Search Test
 
         doggo = shelter.getDog("mm");
         Main.strTest(doggo);
