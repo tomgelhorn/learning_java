@@ -1,6 +1,4 @@
-public class Hamster {
-    private String name;
-    private int size;
+public class Hamster extends Animal{
     private String favoriteFood;
 
     public Hamster(String name, int size, String favoriteFood) {
@@ -9,12 +7,6 @@ public class Hamster {
         this.favoriteFood = favoriteFood;
     }
 
-    public String getName() {
-        return name;
-    }
-    public int getSize() {
-        return size;
-    }
     public String getFavoriteFood() {
         return favoriteFood;
     }

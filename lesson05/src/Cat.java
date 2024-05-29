@@ -1,6 +1,4 @@
-public class Cat {
-    private String name;
-    private int size;
+public class Cat extends Animal{
     private boolean outdoor;
 
     public Cat(String name, int size, boolean outdoor) {
@@ -9,13 +7,6 @@ public class Cat {
         this.outdoor = outdoor;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getSize() {
-        return size;
-    }
 
     public boolean isOutdoor() {
         return outdoor;
