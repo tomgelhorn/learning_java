@@ -14,7 +14,7 @@ public class Main {
         String[] names = {
                 "Emma", "Bello", "Timmy", "Harald", "Susi"
         };
-        Shelter shelter = new Shelter(names.length);
+        Shelter shelter = new Shelter();
         for (int i = 0; i < names.length; i++) {
             Dog dog = new Dog(names[i], (int)(random()*100+30));
             shelter.addDog(dog);
@@ -69,5 +69,13 @@ public class Main {
         }
 
         shelter.print();
+
+        //Test Hash
+        Dog testDog = new Dog("Jürgen", 112);
+        Employee First = new Employee("Tom", 1);
+        Employee Second = new Employee("Lena", 2);
+        shelter.assignCaretaker(testDog, First);
+        shelter.assignCaretaker(testDog, Second);
+
     }
 }

@@ -9,7 +9,13 @@ public class Shelter {
         dogs = new Dog[this.capacity];
     }
 
-    public void addDog(Dog dog) {
+    public void addDog(Dog dog) throws Exception {
+        if (dog == null || dog.getName() == null || dog.getName().equals("")) {
+            throw new Exception("Dog is null!");
+        }
+        if(dog.getSize() <= 0){
+            throw new Exception("Dog size is invalid!");
+        }
         if (count < capacity) {
             dogs[count] = dog;
             count++;
