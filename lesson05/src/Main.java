@@ -1,3 +1,5 @@
+import animals.*;
+
 import static java.lang.Math.random;
 
 public class Main {
@@ -21,14 +23,65 @@ public class Main {
         }
         shelter.print();
 
-        //Hamster Cat Test
+        //Inheritance
+        System.out.println("Running Inheritance Checks");
 
         Cat kitty = new Cat("Kitty", 90, true);
-        Hamster Hamy = new Hamster("Hamy", 15, "Burger");
+        Hamster hamy = new Hamster("hamy", 15, "Burger");
         //Let Kitty say meow
         kitty.meow();
         //Check Hamster fav food
-        Hamy.eatFood("Hotdog");
-        Hamy.eatFood(Hamy.getFavoriteFood());
+        hamy.eatFood("Hotdog");
+        hamy.eatFood(hamy.getFavoriteFood());
+
+        System.out.println("\nRunning Lizard defense test No1");
+        Lizard lizzo = new Lizard("Lizzo", 120, "blue", true);
+        if(lizzo.defend()){
+            System.out.println(lizzo.getName() + " is poisonous and killed the opponent!");
+        }
+        else{
+            System.out.println(lizzo.getName() + " is poisonous but failed to defend you!");
+        }
+        System.out.println("\nRunning Lizard defense test No2");
+        Lizard jeffry = new Lizard("Jeffry", 120, "blue", false);
+        if(jeffry.defend()){
+            System.out.println(jeffry.getName() + " is not poisonous and surprisingly killed the opponent!");
+        }
+        else{
+            System.out.println(jeffry.getName() + " is not poisonous and obviously failed to defend you!");
+        }
+        Bird tweet = new Bird("Tweet", 12, true, 420);
+        Dog hundi = new Dog("Hundi", 90);
+        System.out.println("\nCrazy man talks to Animals:");
+        System.out.println("Hello Bird:");
+        tweet.makeNoise();
+
+        System.out.println("Hello Lizard:");
+        jeffry.makeNoise();
+
+        System.out.println("Hello Cat:");
+        kitty.makeNoise();
+        
+        System.out.println("Hello Hamster:");
+        hamy.makeNoise();
+
+        System.out.println("Hello good boi:");
+        hundi.makeNoise();
+
+        System.out.println("\nDemand Bird to fly to the cell tower:");
+        if(tweet.fly(300)){
+            System.out.println("Tweety got the best cell service");
+        }
+        else{
+            System.out.println("Tweety is not going to fly to the cell tower");
+        }
+
+        System.out.println("\nDemand Bird to fly to the moon:");
+        if(tweet.fly(485749)){
+            System.out.println("Tweety flew to the moon");
+        }
+        else{
+            System.out.println("Tweety died on the way to the moon");
+        }
     }
 }

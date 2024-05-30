@@ -1,10 +1,9 @@
-public class Dog {
-    private int size;
-    private String name;
+package animals;
+
+public class Dog extends Animal{
 
     public Dog(String name, int size) {
-        this.size = size;
-        this.name = name;
+        super(name, size);
     }
 
 
@@ -21,6 +20,11 @@ public class Dog {
         else{
             System.out.println("Wuff wuff");
         }
+    }
+
+    @Override
+    public void makeNoise(){
+        bark();
     }
 
 }

@@ -1,9 +1,10 @@
-public class Hamster extends Animal{
+package animals;
+
+public class Hamster extends Animal {
     private String favoriteFood;
 
     public Hamster(String name, int size, String favoriteFood) {
-        this.name = name;
-        this.size = size;
+        super(name, size);
         this.favoriteFood = favoriteFood;
     }
 
@@ -18,6 +19,11 @@ public class Hamster extends Animal{
         else{
             System.out.println("Eating "+ food);
         }
+    }
+
+    @Override
+    public void makeNoise(){
+        System.out.println("cush cush");
     }
 
 }

@@ -1,9 +1,10 @@
-public class Cat extends Animal{
+package animals;
+
+public class Cat extends Animal {
     private boolean outdoor;
 
     public Cat(String name, int size, boolean outdoor) {
-        this.name = name;
-        this.size = size;
+        super(name, size);
         this.outdoor = outdoor;
     }
 
@@ -13,5 +14,10 @@ public class Cat extends Animal{
     }
     public void meow(){
         System.out.println("Meow");
+    }
+
+    @Override
+    public void makeNoise(){
+        meow();
     }
 }

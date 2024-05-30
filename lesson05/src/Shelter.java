@@ -1,3 +1,5 @@
+import animals.Dog;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -19,19 +21,19 @@ public class Shelter {
         }
         dogs.add(dog);
 
-        System.out.println("Added Dog: " + dog.getName());
+        System.out.println("Added dog: " + dog.getName());
         }
 
 
     public void print() {
-        System.out.print("Current Dog Count: " + dogs.size()+"\n");
+        System.out.print("Current dog Count: " + dogs.size()+"\n");
         for (int i = 0; i < dogs.size(); i++) {
             System.out.print("Dogs inside: "+dogs.get(i).getName() + "(Size: " + dogs.get(i).getSize() + "), ");
         }
         System.out.println();
     }
 /*
-    public Dog getDog(String name) {
+    public Animals.Dog getDog(String name) {
         for (int i = 0; i < count; i++) {
             if (dogs[i].getName().equals(name)) {
                 return dogs[i];
@@ -43,7 +45,7 @@ public class Shelter {
     public Dog getDog(String name) {
         for (int i = 0; i < dogs.size(); i++) {
             if (dogs.get(i).getName().contains(name)) {
-                System.out.println("Adopting Dog: " + dogs.get(i).getName());
+                System.out.println("Adopting dog: " + dogs.get(i).getName());
                 Dog temp = dogs.get(i);
                 dogs.remove(i);
                 return temp;
@@ -54,7 +56,7 @@ public class Shelter {
     public Dog getDog(int minSize) {
         for (int i = 0; i < dogs.size(); i++) {
             if (dogs.get(i).getSize() >= minSize) {
-                System.out.println("Adopting Dog: " + dogs.get(i).getName());
+                System.out.println("Adopting dog: " + dogs.get(i).getName());
                 Dog temp = dogs.get(i);
                 dogs.remove(i);
                 return temp;
