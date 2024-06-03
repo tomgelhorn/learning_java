@@ -16,5 +16,20 @@ public class Main {
         Duc.doJob();
         Dom.doJob();
 
+        System.out.println("\nHumans with job, do their job");
+        Duc.answerQuestion("Is mayonaise an instrument?");
+        Dom.goToConference("How to create integer");
+
+        System.out.println("\nDo shit");
+
+        Student Tom = new Student(Duc);
+        Tom.startAction("Yeet?");
+
+        ResearchGrant Moritz = new ResearchGrant(Dom);
+        Moritz.startAction("Atombombe");
+
+        System.out.println("\nTell Susi to do her job!");
+        Secretary Susi = new Secretary(Duc);
+        Susi.doJob();
     }
 }
