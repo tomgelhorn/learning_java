@@ -17,7 +17,7 @@ public class Main {
         Dom.doJob();
 
         System.out.println("\nHumans with job, do their job");
-        Duc.answerQuestion("Is mayonaise an instrument?");
+        Duc.answerQuestion("Is mayonnaise an instrument?");
         Dom.goToConference("How to create integer");
 
         System.out.println("\nDo shit");
@@ -31,5 +31,11 @@ public class Main {
         System.out.println("\nTell Susi to do her job!");
         Secretary Susi = new Secretary(Duc);
         Susi.doJob();
+
+        System.out.println("\nSusi, please ask the lecturer:");
+        Susi.askWorkerQuestion("Where is da way?");
+        System.out.println("\nSusi, please ask the researcher:");
+        Susi.setWorker(Dom);
+        Susi.askWorkerQuestion("Where is da way?");
     }
 }
