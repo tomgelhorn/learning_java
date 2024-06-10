@@ -1,4 +1,4 @@
-public class Bidder {
+public abstract class Bidder {
     private String name;
     private int budget;
 
@@ -6,7 +6,7 @@ public class Bidder {
         this.name = name;
         this.budget = budget;
     }
-
+    public abstract void shop(Ecove ecove);
     public String getName() {
         return name;
     }
