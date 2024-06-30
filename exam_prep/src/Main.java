@@ -1,4 +1,9 @@
 import Inheritance.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("--- Welcome to Tom's Exam Machine! ---");
@@ -9,6 +14,8 @@ public class Main {
         boolean packages = false;
         boolean exceptions = false;
         boolean inheritance = false;
+        boolean generics = false;
+        boolean threads = true;
 
         if (basics) {
             Basics basic = new Basics();
@@ -36,6 +43,15 @@ public class Main {
             basic.addMap(6,666);
 
             basic.printHashMap(1);
+
+            System.out.println("Testing Streams");
+            basic.stream();
+            basic.arrStream();
+            basic.fastStream();
+
+            System.out.println("Testing Enums & Switch case");
+            basic.Counties(County.Bayern);
+            basic.Counties(County.Thüringen);
 
         }
         if(packages){
@@ -68,6 +84,22 @@ public class Main {
 
             System.out.println("Hi Tom contains Hi: " + string.cont(a, "Hi"));
             System.out.println("Hi Tom contains Bye: " + string.cont(a, "Bye"));
+
+
+            // String Buffer (thread safe)
+
+            StringBuffer strbuff = new StringBuffer("Tom says: ");
+            strbuff.append(c);
+            System.out.println(strbuff);
+            strbuff.insert(3, " never");
+            System.out.println(strbuff);
+
+            // String Builder (not thread safe, but faster)
+            StringBuilder strbuil = new StringBuilder("Tim says: ");
+            strbuil.append(a);
+            System.out.println(strbuil);
+            strbuil.insert(3, " never");
+            System.out.println(strbuil);
         }
         if (exceptions) {
             /* Exceptions */
@@ -104,8 +136,61 @@ public class Main {
         }
 
         if(inheritance){
-            Tom tom = new Tom(19, "Tom");
-            tom.ageCheck();
+            // Upcasting:
+            Human tom = new Tom(19, "Tom");
+            // No access to Functions of Tom-Class
+            // Downcast ->
+            Tom tommi = (Tom) tom;
+            tommi.ageCheck();
+
+            System.out.println("Checking inheritance");
+            if(tommi instanceof Human){
+                System.out.println("Tommi is a human!");
+            }
+
+            System.out.println("Testing Interface");
+            tommi.feed("Burger");
+
+            System.out.println("Testing abstract Classes");
+            tom.drink();
+            tommi.scream();
+
+
+        }
+
+        if(generics){
+            Generics gen = new Generics();
+            Tom rndHooman = new Tom(12, "Hooman");
+            gen.printAnything("Hey");
+            gen.printAnything("Hey", true, 69);
+
+            gen.setContent(rndHooman);
+            System.out.println(gen.getContent());
+            Tom test = (Tom) gen.getContent();
+            test.ageCheck();
+
+            List<String> names = new ArrayList<>();
+            names.add("Tom");
+            names.add("Max");
+            gen.printList(names);
+
+
+            List<Integer> list = Arrays.asList(1,2,3,4,5,6,7,8,9,10);
+            System.out.println(gen.sum(list));
+            //Function takes int and double
+            List<Double> list1 = Arrays.asList(1.9,2.1,3.9,4.2,5.2,6.2,7.2,8.2,9.2,11.99);
+            System.out.println(gen.sum(list1));
+
+
+            ArrayList<Integer> list2 = new ArrayList<>(Arrays.asList(1,2,3,4,5,6,7,8,9,10));
+            //Add 25
+            gen.addElement(list2);
+            System.out.println(gen.sum(list2));
+        }
+
+        if(threads){
+            Thread thread1 = new Threads();
+            thread1.start();
         }
     }
 }

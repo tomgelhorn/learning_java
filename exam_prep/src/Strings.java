@@ -11,4 +11,16 @@ public class Strings {
         String s = new String();
         return s;
     }
+
+    public void playString() {
+        String str = "abc";
+        str.charAt(0); // return value: ‘a’
+        str.concat("str2"); // return value: “abcstr2”
+        str.indexOf("b"); // return value: 1
+        str.contains("bc"); // return value: true
+        str.replace("a", "z"); // return value: “zbc”
+        str.split(""); // return value:[“a”,”b”,”c”]
+    }
+
+
 }
